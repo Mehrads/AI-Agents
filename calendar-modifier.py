@@ -8,7 +8,13 @@ from google.oauth2 import service_account
 from googleapiclient.discovery import build
 from datetime import datetime, timedelta
 from dateutil import parser
+import re
+import chromadb
+from database_retrieval import add_to_db, update_to_db
+from gmail_reader import readEmails
+import tracemalloc
 
+tracemalloc.start()
 
 load_dotenv()
 # Set up logging configuration
@@ -28,6 +34,9 @@ CALENDAR_ID = 'msoltani2001@gmail.com'
 client = OpenAI(base_url="https://openrouter.ai/api/v1",
                 api_key=os.environ.get("OPENAI_API_KEY"),)
 model = "gpt-4o"
+
+client_db = chromadb.PersistentClient(path="eventdb")
+database_path = "eventdb/df_db.csv"
 
 # --------------------------------------------------------------
 # Step 1: Define the data models for routing and responses
@@ -110,11 +119,13 @@ def route_calendar_request(user_input: str) -> CalendarRequestType:
     return result
 
 
-event_id = None
-def create_event(start_time, end_time, description):
+def calendar_create_event(start_time, end_time, description):
     """Create an event in Google Calendar"""
+    # Setting up the connection to the calendar
     credentials = service_account.Credentials.from_service_account_file(SERVICE_ACCOUNT_FILE, scopes=SCOPES)
     service = build('calendar', 'v3', credentials=credentials)
+
+    # Get the event details in the JSON format to use it as the body of the event
     event = {
         'summary': description,
         'start': {
@@ -126,28 +137,20 @@ def create_event(start_time, end_time, description):
             'timeZone': 'America/Toronto',
         },
     }
+
+    # Create the event in the calendar
     created_event = service.events().insert(calendarId=CALENDAR_ID, body=event).execute()
-    global event_id
-    event_id = created_event["id"]
     logger.info(f"Created event: {created_event.get('htmlLink')}")
+
     return created_event
 
-def modify_event(event_id: str, summary: str = None, start_time: datetime = None, end_time: datetime = None, time_zone: str = 'America/Toronto'):
-    """Modifies an existing event in Google Calendar based on start_time and end_time.
-
-    Args:
-        event_id: The ID of the event to modify.
-        summary: The new summary (title) of the event (optional).
-        start_time: The new start time of the event (optional).
-        time_zone: The time zone for the event (default: America/Toronto).
-
-    Returns:
-        The updated event object, or None if the update failed.
-    """
-
+def calendar_modify_event(summary: str = None, start_time: datetime = None, end_time: datetime = None, time_zone: str = 'America/Toronto'):
+    "Modify event in the Google calendar"
+    # Setting up the connection to the calendar
     credentials = service_account.Credentials.from_service_account_file(SERVICE_ACCOUNT_FILE, scopes=SCOPES)
     service = build('calendar', 'v3', credentials=credentials)
 
+    # Get the updated event information in the JSON format to use as the body of the event
     event_updates = {
         'summary': summary,
         'start': {
@@ -161,68 +164,28 @@ def modify_event(event_id: str, summary: str = None, start_time: datetime = None
     }
 
     try:
-        updated_event = service.events().update(calendarId=CALENDAR_ID, eventId=event_id, body=event_updates).execute()  # Use 'patch'
+        # Extracting the event_id from Database
+        collection = client_db.get_or_create_collection(name="eventdb")
+        similar_record = collection.query(
+            query_texts=summary,
+            n_results=1
+        )
+        match = re.search(r"Calendar_ID=([a-zA-Z0-9]+)", similar_record["documents"][0][0])
+        if match:
+            event_id = match.group(1)
+            logger.info(f"Found the event id={event_id} from the database")
+        else:
+            logger.info("No Calendar_ID found.")
+
+        # Updating the event using event id in the Google calendar
+        updated_event = service.events().update(calendarId=CALENDAR_ID, eventId=event_id, body=event_updates).execute()
         logger.info(f"Modified event: {updated_event.get('htmlLink')}")
+
         return updated_event
+
     except Exception as e:
         logger.error(f"Failed to modify event: {e}")
         return None
-
-# def modify_event(description: str, start_time: datetime = None, end_time: datetime = None, time_zone: str = 'America/Toronto'):
-#     """Modifies an existing event in Google Calendar by searching for an event at the given start time and the event ID.
-#
-#     Args:
-#         description: Description of changes
-#         start_time: The start time of the event to modify.
-#         end_time: The new end time of the event (optional).
-#         time_zone: The time zone for the event (default: America/Toronto).
-#
-#     Returns:
-#         The updated event object, or None if the update failed.
-#     """
-#     credentials = service_account.Credentials.from_service_account_file(SERVICE_ACCOUNT_FILE, scopes=SCOPES)
-#     service = build('calendar', 'v3', credentials=credentials)
-#
-#     # Search for events at the given start time
-#     start_time_str = start_time.isoformat() + 'Z'  # Format for Google Calendar API
-#     end_time_search = start_time + timedelta(minutes=1)  # Search within a 1-minute window
-#     end_time_str = end_time_search.isoformat() + 'Z'
-#
-#     events_result = service.events().list(
-#         calendarId=CALENDAR_ID,
-#         timeMin=start_time_str,
-#         timeMax=end_time_str,
-#         singleEvents=True,
-#         orderBy='startTime'
-#     ).execute()
-#     events = events_result.get('items', [])
-#
-#     if not events:
-#         logger.warning(f"No event found at start time: {start_time_str}")
-#         return None
-#
-#     event_id = events[0]['id']  # Get the ID of the first event found
-#
-#     event_updates = {}  # Dictionary to hold the updates
-#
-#     if description:
-#         event_updates['summary'] = description
-#
-#     if end_time:
-#         event_updates['end'] = {
-#             'dateTime': end_time.isoformat(),
-#             'timeZone': time_zone,
-#         }
-#
-#     try:
-#         updated_event = service.events().patch(calendarId=CALENDAR_ID, eventId=event_id, body=event_updates).execute()  # Use 'patch'
-#         logger.info(f"Modified event: {updated_event.get('htmlLink')}")
-#         return updated_event
-#     except Exception as e:
-#         logger.error(f"Failed to modify event: {e}")
-#         return None
-
-
 
 
 def handle_new_event(description: str) -> CalendarResponse:
@@ -251,13 +214,17 @@ def handle_new_event(description: str) -> CalendarResponse:
         combined_datetime_str = f"{details.date} {details.start_time}" if details.date else details.start_time
         start_time = parser.parse(combined_datetime_str)
         end_time = start_time + timedelta(minutes=details.duration_minutes)
-        global event_id
+
         # Step 3: Create the event in Google Calendar
-        created_event = create_event(start_time, end_time, details.name)
+        calendar_created_event = calendar_create_event(start_time, end_time, details.name)
+        event_id = calendar_created_event["id"]
 
         # Step 4: Prepare success response
-        message = f"Created new event '{details.name}' with ID {event_id} starting at {start_time.strftime('%Y-%m-%d %H:%M')} with {', '.join(details.participants)}"
-        calendar_link = created_event.get('htmlLink', None)
+        message = f"Created new event with the name '{details.name}' with Calendar_ID={event_id} starting at {start_time.strftime('%Y-%m-%d %H:%M')} with participant(s) {', '.join(details.participants)}"
+        calendar_link = calendar_created_event.get('htmlLink', None)
+
+        add_to_db(message, database_path)
+        logger.info("The event is added to the database!")
 
         return CalendarResponse(
             success=True,
@@ -281,7 +248,7 @@ def handle_modify_event(description: str) -> CalendarResponse:
     today = datetime.now()
     date_context = f"Today is {today.strftime('%A, %B %d, %Y')}."
 
-    # Get modification details
+    # Step 1: Extract modification details using OpenAI
     completion = client.beta.chat.completions.parse(
         model=model,
         messages=[
@@ -295,17 +262,28 @@ def handle_modify_event(description: str) -> CalendarResponse:
         response_format=ModifyEventDetails,
     )
     details = completion.choices[0].message.parsed
+
+    # Step 2: Parse the date and time
     combined_datetime_str = f"{details.date} {details.start_time}" if details.date else details.start_time
     start_time = parser.parse(combined_datetime_str)
     end_time = start_time + timedelta(minutes=details.duration_minutes)
-    modify_event(event_id="p9hb6pri1f0vh8gs93517qrsfs", summary=details.event_identifier, start_time=start_time, end_time=end_time)
 
+    # Step 3: Modify the event in Google Calendar
+    modified_event = calendar_modify_event(summary=details.event_identifier, start_time=start_time, end_time=end_time)
+    event_id = modified_event["id"]
+
+    # Step 4: Prepare success response
+    message = f"Modified existing event with the name '{details.event_identifier}' with the new Calendar_ID={event_id} starting at {start_time}"
     logger.info(f"Modified event: {details.model_dump_json(indent=2)}")
 
-    # Generate response
+    # Step 5: Update the event's record in the database
+    update_to_db(description=description, path=database_path, message=message)
+    logger.info("Updated in the database and the dataframe")
+
+    # Generate success response
     return CalendarResponse(
         success=True,
-        message=f"Modified event '{details.event_identifier}' with the requested changes",
+        message=message,
         calendar_link=f"calendar://modify?event={details.event_identifier}",
     )
 
@@ -335,22 +313,30 @@ def process_calendar_request(user_input: str) -> Optional[CalendarResponse]:
 # Step 3: Using tools to interact with Google Calendar
 # --------------------------------------------------------------
 
-
 # new_event_input = "Let's schedule a team meeting next Tuesday at 2pm with Alice and Bob"
-# result = process_calendar_request(new_event_input)
-# if result:
-#     print(f"Response: {result.message}")
+new_event_input = readEmails()
+result = process_calendar_request(new_event_input)
+if result:
+    print(f"Response: {result.message}")
 
+snapshot = tracemalloc.take_snapshot()
+top_stats = snapshot.statistics('lineno')
+
+print("[ Top 10 Memory Allocations ]")
+for stat in top_stats[:50]:
+    print(stat)
 # --------------------------------------------------------------
 # Step 4: Test with modify event
 # --------------------------------------------------------------
 #
-modify_event_input = (
-    "Can you move the team meeting with Alice and Bob to next Wednesday at 3pm instead?"
-)
-result = process_calendar_request(modify_event_input)
-if result:
-    print(f"Response: {result.message}")
+# modify_event_input = (
+#     "Can you move the team meeting with Alice and Bob to next Wednesday at 3pm instead?"
+# )
+# modify_event_input = readEmails()
+# result = process_calendar_request(modify_event_input)
+# if result:
+#
+#     print(f"Response: {result.message}")
 
 # --------------------------------------------------------------
 # Step 5: Test with invalid request

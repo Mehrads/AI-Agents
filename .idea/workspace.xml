@@ -5,11 +5,71 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4fb6c758-1605-46e0-b8f0-732361a88790" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/corded-cable-431717-g0-0ad41cef68fe.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client_secret_58170239586-uid3pfgdius0eeordf4q4adjc3mbjgbd.apps.googleusercontent.com.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database_retrieval.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gmail_reader.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/calendar-modifier.py" beforeDir="false" afterPath="$PROJECT_DIR$/calendar-modifier.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/lib/python3.12/site-packages/google/_upb/_message.abi3.so" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.12/site-packages/google/_upb/_message.abi3.so" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/lib/python3.12/site-packages/google/protobuf/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.12/site-packages/google/protobuf/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/lib/python3.12/site-packages/google/protobuf/any.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.12/site-packages/google/protobuf/any.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/lib/python3.12/site-packages/google/protobuf/any_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.12/site-packages/google/protobuf/any_pb2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/lib/python3.12/site-packages/google/protobuf/api_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.12/site-packages/google/protobuf/api_pb2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/lib/python3.12/site-packages/google/protobuf/compiler/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.12/site-packages/google/protobuf/compiler/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/lib/python3.12/site-packages/google/protobuf/compiler/plugin_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.12/site-packages/google/protobuf/compiler/plugin_pb2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/lib/python3.12/site-packages/google/protobuf/descriptor.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.12/site-packages/google/protobuf/descriptor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/lib/python3.12/site-packages/google/protobuf/descriptor_database.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.12/site-packages/google/protobuf/descriptor_database.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/lib/python3.12/site-packages/google/protobuf/descriptor_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.12/site-packages/google/protobuf/descriptor_pb2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/lib/python3.12/site-packages/google/protobuf/descriptor_pool.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.12/site-packages/google/protobuf/descriptor_pool.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/lib/python3.12/site-packages/google/protobuf/duration.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.12/site-packages/google/protobuf/duration.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/lib/python3.12/site-packages/google/protobuf/duration_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.12/site-packages/google/protobuf/duration_pb2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/lib/python3.12/site-packages/google/protobuf/empty_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.12/site-packages/google/protobuf/empty_pb2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/lib/python3.12/site-packages/google/protobuf/field_mask_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.12/site-packages/google/protobuf/field_mask_pb2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/lib/python3.12/site-packages/google/protobuf/internal/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.12/site-packages/google/protobuf/internal/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/lib/python3.12/site-packages/google/protobuf/internal/api_implementation.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.12/site-packages/google/protobuf/internal/api_implementation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/lib/python3.12/site-packages/google/protobuf/internal/builder.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.12/site-packages/google/protobuf/internal/builder.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/lib/python3.12/site-packages/google/protobuf/internal/containers.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.12/site-packages/google/protobuf/internal/containers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/lib/python3.12/site-packages/google/protobuf/internal/decoder.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.12/site-packages/google/protobuf/internal/decoder.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/lib/python3.12/site-packages/google/protobuf/internal/encoder.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.12/site-packages/google/protobuf/internal/encoder.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/lib/python3.12/site-packages/google/protobuf/internal/enum_type_wrapper.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.12/site-packages/google/protobuf/internal/enum_type_wrapper.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/lib/python3.12/site-packages/google/protobuf/internal/extension_dict.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.12/site-packages/google/protobuf/internal/extension_dict.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/lib/python3.12/site-packages/google/protobuf/internal/field_mask.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.12/site-packages/google/protobuf/internal/field_mask.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/lib/python3.12/site-packages/google/protobuf/internal/message_listener.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.12/site-packages/google/protobuf/internal/message_listener.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/lib/python3.12/site-packages/google/protobuf/internal/python_edition_defaults.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.12/site-packages/google/protobuf/internal/python_edition_defaults.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/lib/python3.12/site-packages/google/protobuf/internal/python_message.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.12/site-packages/google/protobuf/internal/python_message.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/lib/python3.12/site-packages/google/protobuf/internal/testing_refleaks.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.12/site-packages/google/protobuf/internal/testing_refleaks.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/lib/python3.12/site-packages/google/protobuf/internal/type_checkers.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.12/site-packages/google/protobuf/internal/type_checkers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/lib/python3.12/site-packages/google/protobuf/internal/well_known_types.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.12/site-packages/google/protobuf/internal/well_known_types.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/lib/python3.12/site-packages/google/protobuf/internal/wire_format.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.12/site-packages/google/protobuf/internal/wire_format.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/lib/python3.12/site-packages/google/protobuf/json_format.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.12/site-packages/google/protobuf/json_format.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/lib/python3.12/site-packages/google/protobuf/message.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.12/site-packages/google/protobuf/message.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/lib/python3.12/site-packages/google/protobuf/message_factory.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.12/site-packages/google/protobuf/message_factory.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/lib/python3.12/site-packages/google/protobuf/proto.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.12/site-packages/google/protobuf/proto.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/lib/python3.12/site-packages/google/protobuf/proto_builder.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.12/site-packages/google/protobuf/proto_builder.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/lib/python3.12/site-packages/google/protobuf/proto_json.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.12/site-packages/google/protobuf/proto_json.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/lib/python3.12/site-packages/google/protobuf/proto_text.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/lib/python3.12/site-packages/google/protobuf/pyext/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.12/site-packages/google/protobuf/pyext/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/lib/python3.12/site-packages/google/protobuf/pyext/cpp_message.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.12/site-packages/google/protobuf/pyext/cpp_message.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/lib/python3.12/site-packages/google/protobuf/reflection.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.12/site-packages/google/protobuf/reflection.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/lib/python3.12/site-packages/google/protobuf/runtime_version.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.12/site-packages/google/protobuf/runtime_version.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/lib/python3.12/site-packages/google/protobuf/service_reflection.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.12/site-packages/google/protobuf/service_reflection.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/lib/python3.12/site-packages/google/protobuf/source_context_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.12/site-packages/google/protobuf/source_context_pb2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/lib/python3.12/site-packages/google/protobuf/struct_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.12/site-packages/google/protobuf/struct_pb2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/lib/python3.12/site-packages/google/protobuf/symbol_database.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.12/site-packages/google/protobuf/symbol_database.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/lib/python3.12/site-packages/google/protobuf/testdata/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.12/site-packages/google/protobuf/testdata/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/lib/python3.12/site-packages/google/protobuf/text_encoding.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.12/site-packages/google/protobuf/text_encoding.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/lib/python3.12/site-packages/google/protobuf/text_format.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.12/site-packages/google/protobuf/text_format.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/lib/python3.12/site-packages/google/protobuf/timestamp.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.12/site-packages/google/protobuf/timestamp.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/lib/python3.12/site-packages/google/protobuf/timestamp_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.12/site-packages/google/protobuf/timestamp_pb2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/lib/python3.12/site-packages/google/protobuf/type_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.12/site-packages/google/protobuf/type_pb2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/lib/python3.12/site-packages/google/protobuf/unknown_fields.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.12/site-packages/google/protobuf/unknown_fields.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/lib/python3.12/site-packages/google/protobuf/util/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.12/site-packages/google/protobuf/util/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/lib/python3.12/site-packages/google/protobuf/wrappers_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python3.12/site-packages/google/protobuf/wrappers_pb2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/lib/python3.12/site-packages/protobuf-6.30.2.dist-info/INSTALLER" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/lib/python3.12/site-packages/protobuf-6.30.2.dist-info/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/lib/python3.12/site-packages/protobuf-6.30.2.dist-info/METADATA" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/lib/python3.12/site-packages/protobuf-6.30.2.dist-info/RECORD" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/lib/python3.12/site-packages/protobuf-6.30.2.dist-info/WHEEL" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +112,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.real-state-agent">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="agents" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -75,6 +135,33 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="real-state-agent" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="agents" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../Agents-team" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../Agents-team/real-state-agent.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.real-state-agent" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -96,7 +183,27 @@
       <workItem from="1745938201341" duration="15153000" />
       <workItem from="1746201470172" duration="500000" />
       <workItem from="1747177594983" duration="3150000" />
-      <workItem from="1747753649809" duration="7337000" />
+      <workItem from="1747753649809" duration="7679000" />
+      <workItem from="1747922245915" duration="9212000" />
+      <workItem from="1748030535404" duration="6009000" />
+      <workItem from="1748306446691" duration="758000" />
+      <workItem from="1748466613991" duration="1308000" />
+      <workItem from="1748734880848" duration="782000" />
+      <workItem from="1748894342614" duration="2431000" />
+      <workItem from="1748915310705" duration="3039000" />
+      <workItem from="1748919413193" duration="381000" />
+      <workItem from="1748919800828" duration="2127000" />
+      <workItem from="1749058784031" duration="4806000" />
+      <workItem from="1749517053494" duration="622000" />
+      <workItem from="1749919892328" duration="598000" />
+      <workItem from="1750206215744" duration="598000" />
+      <workItem from="1750861930227" duration="1272000" />
+      <workItem from="1751322880098" duration="40000" />
+      <workItem from="1751487649117" duration="598000" />
+      <workItem from="1751992613882" duration="2440000" />
+      <workItem from="1752007275700" duration="1036000" />
+      <workItem from="1753479307787" duration="46000" />
+      <workItem from="1753720053671" duration="4503000" />
     </task>
     <servers />
   </component>
@@ -106,8 +213,9 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/personal_assistant_py$calendar_modifier.coverage" NAME="calendar-modifier Coverage Results" MODIFIED="1746031951369" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/agents$main.coverage" NAME="main Coverage Results" MODIFIED="1743691058516" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/personal_assistant_py$main.coverage" NAME="main Coverage Results" MODIFIED="1745938246059" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/personal_assistant_py$main.coverage" NAME="main Coverage Results" MODIFIED="1748029645876" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/personal_assistant_py$personal_assistant.coverage" NAME="personal-assistant Coverage Results" MODIFIED="1745938253687" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/main_py$main.coverage" NAME="main Coverage Results" MODIFIED="1741385584558" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/personal_assistant_py$real_state_agent.coverage" NAME="real-state-agent Coverage Results" MODIFIED="1751994606151" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../Agents-team" />
   </component>
 </project>

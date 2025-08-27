@@ -1,0 +1,14 @@
+# Ignore environment files
+.env
+*.env
+
+# Ignore all JSON files
+*.json
+
+
+# Ignore virtual environment and IDE/cache directories
+env/
+eventdb/
+.idea/
+__pycache__/
+
