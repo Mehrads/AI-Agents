@@ -127,6 +127,5 @@ Response: Created new event with the name 'Team Meeting' with Calendar_ID=... st
 - Batch process multiple unread emails and deduplicate similar requests.
 - Improve participant handling (invite attendees by email, etc.).
 
-### License
-MIT (or your preferred license).
+
 
